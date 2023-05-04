@@ -25,3 +25,8 @@ Diversos sites de compras te proporcionam descontos na primeira conta. Gerando e
 4- Após isso use o email a vontade.
 
 5 - Precisa de outro? Execute o programa novamente e vualá!
+
+------------------------------------------------------------
+
+#### Colabore 
+
