@@ -44,6 +44,12 @@ import random
 #step5: seleção dos campos que serão inputados os dados.
 #step6: Salvamento dos dados inputados.
 
+nome1 = str(input("Digite o nome a ser usado para a conta: "))
+sobrenome_1 = str(input("Digite o sobrenome a ser usado para a conta: "))
+email_1 = str(input("Digite o e-mail a ser usado para a conta: "))
+senha_1 = input("Digite a senha para a conta: ")
+
+
 
 driver = webdriver.Firefox()
 driver.get("https://www.gmail.com")
@@ -52,19 +58,21 @@ driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div
 time.sleep(2)
 driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/div/ul/li[1]').send_keys(Keys.ENTER)
 time.sleep(1)
-driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div[1]/div/div[1]/div/div[1]/input').send_keys('teste' + Keys.ENTER)
+driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div[1]/div/div[1]/div/div[1]/input').send_keys(nome1 + Keys.ENTER)
 time.sleep(0.5)
-driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div[1]/input').send_keys('teste' + Keys.ENTER)
+driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div[2]/div/div[1]/div/div[1]/input').send_keys(sobrenome_1 + Keys.ENTER)
 time.sleep(0.5)
-driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[2]/div[1]/div/div[1]/div/div[1]/input').send_keys('teste_teste' + Keys.ENTER)
+driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[2]/div[1]/div/div[1]/div/div[1]/input').send_keys(email_1 + Keys.ENTER)
 time.sleep(0.5)
-driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/div/div[1]/input').send_keys('123456789'+ Keys.ENTER)
+driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[1]/div/div/div[1]/div/div[1]/div/div[1]/input').send_keys(senha_1+ Keys.ENTER)
 time.sleep(0.5)
-driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input').send_keys('123456789'+ Keys.ENTER)
+driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input').send_keys(senha_1+ Keys.ENTER)
 time.sleep(0.5)
 driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button').send_keys(Keys.ENTER)
 
 
+
+print("Seu e-mail é {} e sua senha utilizada para este e-mail é: {}".format(email_1, senha_1))
 
 
 #driver.execute_script("window.open('https://www.github.com', '_blank');")
